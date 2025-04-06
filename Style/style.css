@@ -5,7 +5,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Red Hat Display", sans-serif;
-  text-decoration: none;
+}
+
+a.externo::after {
+  content: "\00A0\1F517";
 }
 
 body {
@@ -44,31 +47,54 @@ main p {
   font-size: 1, 1250em;
   text-align: left;
   line-height: 2em;
+  padding: 0.7em;
+}
+
+main a {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #44444444;
+  color: #000;
+  border-radius: 10px;
+  padding: 2px 6px;
+}
+
+main a:hover {
+  text-decoration: underline;
 }
 
 main h1 {
   padding: 1.5em;
   color: #444;
   text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
-  
 }
 
 main h2 {
   padding: 1.5em;
   text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
-  
 }
 
 main h3 {
   padding: 1.5em;
   font-size: 1.3em;
   text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
-  
 }
 
 main li {
-  padding: 0.3em;
+  padding: 0.5em;
 }
+
+main ul {
+  list-style-type: "\2714\0020\0020";
+  list-style-position: inside;
+  text-indent: 15px;
+}
+
+main img {
+  padding: 15px 0px;
+}
+
+/* FOOTER */
 
 footer {
   text-align: center;
@@ -76,9 +102,9 @@ footer {
 }
 
 footer a {
+  text-decoration: none;
   color: #000;
 }
-
 
 footer a:hover {
   text-decoration: underline;
