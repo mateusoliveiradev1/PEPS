@@ -36,8 +36,8 @@ main {
   margin-bottom: 30px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  /* border: 1px solid red; */
   background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
 }
 
 main p {
@@ -49,22 +49,38 @@ main p {
 main h1 {
   padding: 1.5em;
   color: #444;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
+  
 }
 
 main h2 {
   padding: 1.5em;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
+  
 }
 
 main h3 {
   padding: 1.5em;
   font-size: 1.3em;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
+  
 }
 
 main li {
-  padding: 0.2em;
+  padding: 0.3em;
 }
 
 footer {
   text-align: center;
   background-color: #44444469;
+}
+
+footer a {
+  color: #000;
+}
+
+
+footer a:hover {
+  text-decoration: underline;
+  color: #444;
 }
