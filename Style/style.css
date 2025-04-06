@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: #44444469;
+}
+/* HEADER */
+
+header {
+  background-color: #214092;
+  min-height: 150px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+header img {
+  margin: auto;
+  display: block;
+  padding: 15px;
+}
+
+/* MAIN */
+
+main {
+  min-width: 300px;
+  max-width: 1000px;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  /* border: 1px solid red; */
+  background-color: white;
+}
+
+main p {
+  font-size: 1, 1250em;
+  text-align: left;
+  line-height: 2em;
+}
+
+main h1 {
+  padding: 1.5em;
+  color: #444;
+}
+
+main h2 {
+  padding: 1.5em;
+}
+
+main h3 {
+  padding: 1.5em;
+  font-size: 1.3em;
+}
+
+main li {
+  padding: 0.2em;
+}
+
+footer {
+  text-align: center;
+  background-color: #44444469;
+}
