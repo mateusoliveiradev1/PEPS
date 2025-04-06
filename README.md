@@ -1,2 +1,2 @@
 # PEPS
- Site feito para mostras os conceitos do PEPS
+ Site feito para mostrar os conceitos do PEPS
