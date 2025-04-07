@@ -18,15 +18,15 @@ body {
 
 header {
   background-color: #214092;
-  min-height: 150px;
+  min-height: 9.375em;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 2.5em;
 }
 
 header img {
   margin: auto;
   display: block;
-  padding: 15px;
+  padding: 0.938em;
 }
 
 /* MAIN */
@@ -44,37 +44,44 @@ main {
 }
 
 main p {
-  font-size: 1, 1250em;
+  font-size: 1.125em;
   text-align: left;
   line-height: 2em;
   padding: 0.7em;
 }
 
-main a {
+main > article  a {
   text-decoration: none;
   font-weight: bold;
-  background-color: #44444444;
   color: #000;
+  background-color: #44444444;
   border-radius: 10px;
   padding: 2px 6px;
 }
 
-main a:hover {
+main > article a:hover {
   text-decoration: underline;
+  background-color: #44444444;
 }
 
 main h1 {
+  font-size: 2.188em;
+  font-weight: 600;
+  line-height: 2.5em;
+  letter-spacing: 0px;
   padding: 1.5em;
   color: #444;
   text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
 }
 
 main h2 {
+  color: #444;
   padding: 1.5em;
   text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
 }
 
 main h3 {
+  color: #444;
   padding: 1.5em;
   font-size: 1.3em;
   text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
@@ -93,6 +100,14 @@ main ul {
 main img {
   padding: 15px 0px;
 }
+
+.btn-voltar {
+  align-items: left;
+  width: 2.188em;
+  cursor: pointer;
+}
+
+
 
 /* FOOTER */
 
