@@ -70,7 +70,7 @@ main h1 {
   line-height: 2.5em;
   letter-spacing: 0px;
   color: #444;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418);
+  /* text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.418); */
 }
 
 main h2 {
