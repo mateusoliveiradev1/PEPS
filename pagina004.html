@@ -6,54 +6,58 @@
     <title>
       Qual a Importância do Inventário Rotativo no Setor de Hortifrúti
     </title>
-    <link rel="stylesheet" href="Style/style.css" />
     <link
       rel="shortcut icon"
       href="imagens/favicon-16x16.png"
       type="image/x-icon"
     />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header>
-      <a href="index.html">
-        <img
-          src="https://iquegami.com.br/wp-content/uploads/2021/02/logo-topo.png"
-          alt=""
-        />
-      </a>
+
+  <body
+    class="bg-gradient-to-b from-green-100 to-green-50 text-gray-800 font-sans"
+  >
+    <!-- Header -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+        <a href="index.html">
+          <img
+            src="https://iquegami.com.br/wp-content/uploads/2021/02/logo-topo.png"
+            alt="Logo"
+            class="h-10"
+          />
+        </a>
+      </div>
     </header>
 
-    <main>
-      <h1>Qual a Importância do Inventário Rotativo no Setor de Hortifrúti</h1>
+    <!-- Spacer -->
+    <div class="h-24"></div>
 
-      <article>
-        <picture>
-          <source
-            media="(max-width: 435px )"
-            srcset="imagens/estoque-loja-355.png"
-          />
-          <source
-            media="(max-width: 470px)"
-            srcset="imagens/estoque-loja-400.png"
-          />
-          <source
-            media="(max-width: 800px)"
-            srcset="imagens/estoque-loja-500.png"
-          />
-          <img
-            src="imagens/estoque-loja-900.png"
-            alt="Estoque de um supermercado"
-          />
-        </picture>
+    <!-- Main Content -->
+    <main
+      class="max-w-6xl mx-auto p-4 sm:p-8 space-y-10 text-lg leading-relaxed"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-8 leading-tight"
+      >
+        Qual a Importância do Inventário Rotativo no Setor de Hortifrúti
+      </h1>
 
-        <h3>
+      <section class="flex justify-center">
+        <img
+          src="imagens/estoque-loja-900.png"
+          alt="Estoque de um supermercado"
+          class="rounded-xl shadow-lg max-w-full"
+        />
+      </section>
+
+      <section class="space-y-4">
+        <h3 class="text-2xl font-semibold text-green-700">
           O que é inventário rotativo no FLV. Saiba como reduzir os impactos da
           perda através do inventário rotativo.
         </h3>
-
         <p>
           A gestão eficiente de estoques é essencial para qualquer empresa do
           setor alimentício, especialmente no segmento de hortifrúti, onde os
@@ -68,9 +72,14 @@
           >, evitando desperdícios e melhorando a lucratividade. Além disso, sua
           aplicação contribui para uma operação mais eficiente e organizada.
         </p>
+      </section>
 
-        <h2>O Que é o Inventário Rotativo?</h2>
-
+      <section class="space-y-4">
+        <h2
+          class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2"
+        >
+          O Que é o Inventário Rotativo?
+        </h2>
         <p>
           Primeiramente, o inventário rotativo consiste em um
           <strong>método de contagem contínua dos produtos em estoque</strong>.
@@ -89,9 +98,14 @@
           Consequentemente, essa estratégia melhora a previsibilidade e evita
           surpresas desagradáveis.
         </p>
+      </section>
 
-        <h2>Benefícios do Inventário Rotativo no Hortifrúti</h2>
-
+      <section class="space-y-4">
+        <h2
+          class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2"
+        >
+          Benefícios do Inventário Rotativo no Hortifrúti
+        </h2>
         <p>
           O setor de hortifrúti apresenta desafios únicos devido à curta
           <strong>vida útil dos produtos</strong> e giro rápido de venda.
@@ -102,8 +116,9 @@
           <strong>eficiência operacional e os lucros do negócio</strong>.
         </p>
 
-        <h3>1. Redução da Perda</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          1. Redução da Perda
+        </h3>
         <p>
           Como os alimentos perecíveis têm prazos de
           <strong>validade reduzidos</strong>, a falta de controle pode levar a
@@ -115,13 +130,10 @@
           <strong>adotar estratégias</strong> para vendê-los rapidamente,
           <strong>evitando perdas</strong> desnecessárias.
         </p>
-        <p>
-          Dessa maneira, a empresa consegue manter um
-          <strong>estoque mais equilibrado e reduzir prejuízos</strong>.
-        </p>
 
-        <h3>2. Precisão no Controle de Estoque</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          2. Precisão no Controle de Estoque
+        </h3>
         <p>
           Manter um estoque equilibrado é fundamental para atender à demanda sem
           gerar <strong>excesso de produtos</strong> que possam se deteriorar.
@@ -130,13 +142,12 @@
           O inventário rotativo ajuda a
           <strong>identificar falhas no abastecimento</strong>, garantindo que a
           reposição ocorra de maneira adequada e evitando rupturas no
-          fornecimento. Além disso, a precisão nas contagens
-          <strong>melhora o planejamento de compras e reduz desperdícios</strong
-          >.
+          fornecimento.
         </p>
 
-        <h3>3. Melhoria na Experiência do Cliente</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          3. Melhoria na Experiência do Cliente
+        </h3>
         <p>
           Clientes esperam encontrar frutas, verduras e legumes frescos e em
           boas condições.
@@ -146,98 +157,68 @@
           estarão sempre disponíveis e em maior qualidade, aumentando a
           satisfação e fidelização dos consumidores.
         </p>
-        <p>
-          Além disso, a regularidade na oferta dos produtos melhora a reputação
-          do negócio, incentivando a recomendação boca a boca.
-        </p>
 
-        <h3>4. Otimização do Tempo da Equipe</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          4. Otimização do Tempo da Equipe
+        </h3>
         <p>
           A realização de um inventário anual pode ser um processo demorado e
           trabalhoso.
         </p>
         <p>
           Em contrapartida, a contagem rotativa distribui essa tarefa ao longo
-          do tempo, tornando-a <strong>menos onerosa para a equipe</strong> e
-          garantindo que a operação do negócio continue fluindo normalmente.
-        </p>
-        <p>
-          Dessa forma, os funcionários conseguem dedicar
-          <strong>mais tempo a outras atividades essenciais</strong>, como o
-          atendimento ao cliente.
+          do tempo, tornando-a <strong>menos onerosa para a equipe</strong>.
         </p>
 
-        <h3>5. Redução de Perdas Financeiras</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          5. Redução de Perdas Financeiras
+        </h3>
         <p>
-          Produtos que estragam principalmente no estoque representam
+          Produtos que estragam no estoque representam
           <strong>prejuízo direto</strong>.
         </p>
         <p>
           No entanto, com um monitoramento frequente, a empresa pode agir
           rapidamente para minimizar as perdas e otimizar a margem de lucro.
         </p>
-        <p>
-          Além disso, um controle mais rigoroso evita furtos ou extravios.
-          Consequentemente, a empresa mantém um fluxo financeiro mais saudável e
-          previsível.
-        </p>
+      </section>
 
-        <picture>
-          <source
-            media="(max-width:  435px )"
-            srcset="imagens/colaborador-pesando-rotativo-350.jpeg"
-          />
-          <source
-            media="(max-width: 470px)"
-            srcset="imagens/colaborador-pesando-rotativo-400.jpeg"
-          />
-          <source
-            media="(max-width: 800px)"
-            srcset="imagens/colaborador-pesando-rotativo-500.jpeg"
-          />
-          <img
-            src="imagens/colaborador-pesando-rotativo-900.jpeg"
-            alt="Colaborador pesando produtos no inventário rotativo"
-          />
-          <figcaption>
-            <sup
-              >Imagem: Colaboradora pesando produtos no inventário rotativo.
-              Qual a importância do inventário rotativo no setor de
-              hortifrúti.</sup
-            >
-          </figcaption>
-        </picture>
+      <section class="flex justify-center">
+        <img
+          src="imagens/colaborador-pesando-rotativo-900.jpeg"
+          alt="Colaborador pesando produtos no inventário rotativo"
+          class="rounded-xl shadow-lg max-w-full"
+        />
+      </section>
 
-        <h2>Como Implementar o Inventário Rotativo no Setor de Hortifrúti</h2>
-
+      <section class="space-y-4">
+        <h2
+          class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2"
+        >
+          Como Implementar o Inventário Rotativo no Setor de Hortifrúti
+        </h2>
         <p>Todavia, a adoção dessa prática exige planejamento e organização.</p>
         <p>
           No entanto, algumas estratégias podem facilitar a implementação e
           garantir a eficiência do processo.
         </p>
 
-        <h3>1. Definir Categorias de Produtos</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          1. Definir Categorias de Produtos
+        </h3>
         <p>
           Uma boa estratégia é dividir os itens do hortifrúti em categorias e
           estabelecer a <strong>frequência de contagem</strong> para cada uma
           delas.
         </p>
         <p>
-          Produtos com <strong>menor vida útil</strong>, como folhagem e frutos
-          delicados, devem ser checados com mais frequência do que raízes e
-          tubérculos.
-        </p>
-        <p>Dessa maneira, o controle se torna mais preciso e eficiente.</p>
-        <p>
           Por exemplo: Inventário rotativo em todas as folhagens todas as terças
-          – as 18hs. (Contagem de todas as verduras)
+          – às 18hs.
         </p>
 
-        <h3>2. Utilizar Tecnologia</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          2. Utilizar Tecnologia
+        </h3>
         <p>
           Certamente, o uso de <strong>sistemas de gestão</strong> facilita a
           execução do inventário rotativo.
@@ -245,123 +226,84 @@
         <p>
           <strong>Softwares específicos</strong> permitem registrar a
           movimentação dos produtos e gerar
-          <strong>relatórios detalhados</strong>, aumentando a precisão e
-          reduzindo a margem de erro.
-        </p>
-        <p>
-          Além disso, essas ferramentas ajudam a prever tendências de consumo,
-          melhorando o planejamento.
-        </p>
-        <p>
-          Entretanto, se não houver um sistema de software no auxílio do
-          inventário rotativo, pode-se usar um parâmetro de contagem por: tipos
-          de produtos, mais vendidos e os que mais quebram. Sendo assim o ajuste
-          do estoque pode ser feito manualmente.
+          <strong>relatórios detalhados</strong>.
         </p>
 
-        <h3>3. Capacitar a Equipe</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          3. Capacitar a Equipe
+        </h3>
         <p>
-          Assim, para que o processo funcione corretamente, os funcionários
-          precisam estar <strong>treinados para realizar as contagens</strong> e
+          Para que o processo funcione corretamente, os funcionários precisam
+          estar <strong>treinados para realizar as contagens</strong> e
           registrar os dados corretamente.
         </p>
-        <p>
-          O treinamento garante que todos <strong>sigam um padrão</strong>,
-          evitando inconsistências nas informações.
-        </p>
-        <p>
-          Dessa forma, a empresa assegura a confiabilidade dos dados obtidos.
-        </p>
-        <p>
-          Dessa forma, o ideal que todos saibam a
-          <strong>maneira correta de efetuar o inventário rotativo</strong> do
-          início ao fim.
-        </p>
-        <p>
-          Concentre-se os <strong>responsáveis pelo inventário</strong> sendo os
-          <strong>líderes</strong>, para garantir que não tenham discrepâncias
-          na contagem, ou até mesmo fraudes.
-        </p>
 
-        <h3>4. Estabelecer um Cronograma</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          4. Estabelecer um Cronograma
+        </h3>
         <p>
           Criar um <strong>calendário de contagens</strong> ajuda a manter a
           regularidade do inventário rotativo.
         </p>
-        <p>
-          A frequência deve ser definida de acordo com o
-          <strong>volume de vendas</strong> e a
-          <strong>perecibilidade dos produtos</strong>.
-        </p>
-        <p>
-          Assim, o controle se torna mais eficaz e alinhado às necessidades do
-          negócio.
-        </p>
-        <p>Vejamos exemplos:</p>
 
-        <ul>
+        <ul class="list-disc list-inside space-y-2 pl-4">
           <li>
-            <strong>Volume de vendas</strong>: de terça e sexta. Contagem de
-            batata cebola e alho;
+            <strong>Volume de vendas</strong>: Terça e sexta - batata, cebola e
+            alho;
           </li>
           <li>
-            <strong>Que mais quebram do mês</strong>: Segunda e quarta: Contagem
-            de banana, alface e tomate.
+            <strong>Que mais quebram do mês</strong>: Segunda e quarta - banana,
+            alface e tomate.
           </li>
         </ul>
 
-        <h3>5. Revisar e Ajustar o Processo</h3>
-
+        <h3 class="text-xl font-semibold text-green-600 pt-4">
+          5. Revisar e Ajustar o Processo
+        </h3>
         <p>
-          Em seguida, o <strong>monitoramento contínuo</strong> do método
-          permite identificar possíveis falhas e realizar ajustes para melhorar
-          a eficiência.
+          O monitoramento contínuo do método permite identificar possíveis
+          falhas e realizar ajustes para melhorar a eficiência.
         </p>
-        <p>
-          Revisões periódicas garantem que o inventário rotativo esteja sempre
-          alinhado às <strong>necessidades do negócio</strong>.
-        </p>
-        <p>
-          Dessa forma, a empresa pode corrigir eventuais problemas antes que se
-          tornem críticos.
-        </p>
+      </section>
 
-        <h3>Conclusão</h3>
-
+      <section class="space-y-4">
+        <h2
+          class="text-2xl font-bold text-green-700 mt-10 border-b border-green-400 pb-2"
+        >
+          Conclusão
+        </h2>
         <p>
           Por fim, o inventário rotativo é uma ferramenta essencial para o setor
           de hortifrúti, pois garante um controle preciso dos produtos, reduz
           desperdícios e melhora a experiência do cliente.
         </p>
         <p>
-          Além disso, ao implementar essa prática, as empresas aumentam sua
-          eficiência operacional e evitam prejuízos financeiros.
-        </p>
-        <p>
           Investir nesse método significa aprimorar a gestão do estoque e
-          garantir maior lucratividade no longo prazo. Dessa maneira, o negócio
-          se torna mais competitivo e sustentável.
+          garantir maior lucratividade no longo prazo.
         </p>
-      </article>
+      </section>
 
-      <a href="pagina003.html"
-        ><img
-          src="imagens/botao-voltar.png"
-          alt="Botao de voltar"
-          class="btn-voltar"
-      /></a>
+      <section class="flex justify-center mt-10">
+        <a
+          href="pagina003.html"
+          class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-full shadow-md transition"
+        >
+          Voltar
+        </a>
+      </section>
     </main>
 
-    <footer>
-      Site Feito com 💙 por
-      <a
-        href="https://github.com/mateusoliveiradev1"
-        target="_blank"
-        class="externo"
-        >Mateus Oliveira</a
-      >
+    <!-- Footer -->
+    <footer class="bg-green-600 mt-12 p-4">
+      <div class="text-center text-white text-sm">
+        © 2025 Todos os direitos reservados | Desenvolvido por
+        <a
+          href="https://github.com/mateusoliveiradev1"
+          target="_blank"
+          class="underline"
+          >Mateus Oliveira</a
+        >
+      </div>
     </footer>
   </body>
 </html>

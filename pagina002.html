@@ -3,251 +3,311 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Exposição Controlada e Exposição Agressiva no Setor de Hortifrúti: Qual a
-      Melhor Estratégia?
-    </title>
-    <link rel="stylesheet" href="Style/style.css" />
-    <link rel="shortcut icon" href="imagens/favicon-16x16.png" type="image/x-icon">
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
-    </style>
+    <title>Exposição Controlada e Exposição Agressiva no Hortifrúti</title>
+    <link
+      rel="shortcut icon"
+      href="imagens/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header>
-      <a href="index.html">
-        <img
-          src="https://iquegami.com.br/wp-content/uploads/2021/02/logo-topo.png"
-          alt=""
-        />
-      </a>
+
+  <body
+    class="bg-gradient-to-b from-green-100 to-green-50 text-gray-800 font-sans"
+  >
+    <!-- Header -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+        <a href="index.html">
+          <img
+            src="https://iquegami.com.br/wp-content/uploads/2021/02/logo-topo.png"
+            alt="Logo"
+            class="h-10"
+          />
+        </a>
+        <button
+          id="menu-toggle"
+          class="lg:hidden flex flex-col justify-between w-8 h-6"
+        >
+          <span class="block h-0.5 bg-gray-800 transition-all"></span>
+          <span class="block h-0.5 bg-gray-800 transition-all"></span>
+          <span class="block h-0.5 bg-gray-800 transition-all"></span>
+        </button>
+        <nav id="menu" class="hidden lg:flex gap-6 text-gray-700 font-medium">
+          <a href="index.html" class="hover:text-green-600 transition">Home</a>
+        </nav>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden flex-col items-center bg-white/90 backdrop-blur-md shadow-md absolute top-full left-0 w-full"
+      >
+        <a
+          href="index.html"
+          class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition"
+          >Home</a
+        >
+      </div>
     </header>
 
-    <main>
-      <article>
-        <h1>
-          Exposição Controlada e Exposição Agressiva no Setor de Hortifrúti:
-          Qual a Melhor Estratégia?
-        </h1>
-        <picture>
-          <source
-            media="(max-width: 435px )"
-            srcset="imagens/primeira-foto-segunda-pagina-350.webp"
-          />
-          <source
-            media="(max-width:470px)"
-            srcset="imagens/primeira-foto-segunda-pagina-400.webp"
-          />
-          <source
-            media="(max-width:800px )"
-            srcset="imagens/primeira-foto-segunda-pagina-500.webp"
-          />
-          <img
-            src="imagens/primeira-foto-segunda-pagina-950.webp"
-            alt="Abastecimento e oferta "
-          />
-        </picture>
-        <h3>
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        toggle.classList.toggle("open");
+        const spans = toggle.querySelectorAll("span");
+        spans[0].classList.toggle("rotate-45");
+        spans[1].classList.toggle("opacity-0");
+        spans[2].classList.toggle("-rotate-45");
+      });
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          toggle.classList.remove("open");
+          const spans = toggle.querySelectorAll("span");
+          spans[0].classList.remove("rotate-45");
+          spans[1].classList.remove("opacity-0");
+          spans[2].classList.remove("-rotate-45");
+        });
+      });
+    </script>
+
+    <!-- Spacer -->
+    <div class="h-24"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto p-4 sm:p-8">
+      <h1
+        class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-8 leading-tight"
+      >
+        Exposição Controlada e Exposição Agressiva no Setor de Hortifrúti: Qual
+        a Melhor Estratégia?
+      </h1>
+
+      <div class="flex justify-center mb-8">
+        <img
+          src="imagens/primeira-foto-segunda-pagina-950.webp"
+          alt="Abastecimento e oferta"
+          class="rounded-xl shadow-lg max-w-full"
+        />
+      </div>
+
+      <article class="space-y-10 text-lg leading-relaxed">
+        <h3 class="text-2xl font-semibold text-green-700">
           Saiba qual o formato de exposição adequada para cada tipo de oferta no
           hortifrúti
         </h3>
+
         <p>
           A maneira como os varejistas apresentam os produtos hortifrútis
           impacta diretamente as vendas e a percepção de qualidade.
         </p>
+
         <p>
           Para conquistar os clientes, eles utilizam duas estratégias
-          principais:
-          <strong>a exposição controlada e a agressiva.</strong>
+          principais: <strong>exposição controlada e agressiva</strong>.
         </p>
+
         <p>Mas qual delas traz melhores resultados?</p>
+
         <p>
           Neste artigo, vamos explorar os conceitos, vantagens e desafios de
           cada abordagem para ajudar você a decidir qual adotar.
         </p>
-        <h2>O Que é a Exposição Controlada?</h2>
-        <p>
-          Primeiramente, na <strong>exposição controlada,</strong> os produtos
-          ficam dispostos
-          <strong>de forma organizada e equilibrada, </strong>sem qualquer
-          excesso dentro de um padrão.
-        </p>
-        <p>
-          Esse método
-          <strong>destaca a qualidade, o frescor e a sofisticação </strong>dos
-          itens, criando uma experiência de compra mais seletiva.
-        </p>
-        <h3>Benefícios da Exposição Controlada</h3>
-        <ul>
-          <li>
-            <strong>Aparência premium</strong>: Produtos bem posicionados
-            transmitem sofisticação e frescor.
-          </li>
-          <li>
-            <strong>Menos desperdício</strong>: A organização reduz danos e
-            preserva a durabilidade dos alimentos.
-          </li>
-          <li>
-            <strong>Melhor experiência do cliente</strong>: A disposição
-            ordenada facilita a escolha e aumenta a satisfação.
-          </li>
-          <li>
-            <strong>Maior controle de estoque</strong>: A renovação constante dos
-            itens evita perdas e melhora a gestão. Embora essa estratégia realce
-            a <strong>qualidade dos produtos</strong>, ela pode reduzir o
-            impacto visual e limitar o volume de vendas em alguns contextos.
-          </li>
-        </ul>
-        <h2>O Que é a Exposição Agressiva?</h2>
-        <p>
-          Em contrapartida, na <strong>exposição agressiva</strong>, os produtos
-          aparecem em <strong>grandes volumes,</strong> criando uma sensação de
-          <strong>abundância e promoção.</strong>
-        </p>
-        <p>
-          Esse modelo atrai clientes que buscam
-          <strong>variedade e preços competitivos.</strong>
-        </p>
-        <h2>Benefícios da Exposição Agressiva</h2>
-        <ul>
-          <li>
-            <strong>Sensação de fartura</strong>: O impacto visual sugere
-            variedade e preços acessíveis.
-          </li>
-          <li>
-            <strong>Aumento das compras por impulso</strong>: A disposição
-            chamativa incentiva o consumidor a comprar mais.
-          </li>
-          <li>
-            <strong>Facilidade na reposição</strong>: O reabastecimento ocorre
-            de forma simples e rápida.
-          </li>
-          <li>
-            <strong>Melhor aproveitamento do espaço</strong>: A exposição massiva
-            otimiza a utilização da área de vendas. Porém, essa estratégia
-            <strong>pode gerar desperdício</strong>, pois o
-            <strong>empilhamento excessivo</strong> pode danificar os produtos.
-          </li>
-        </ul>
-        <p>
-          Além disso, um ambiente desorganizado pode prejudicar a experiência de
-          compra.
-        </p>
-        <picture>
-          <source
-            media="(max-width: 435px)"
-            srcset="imagens/exposiçao-agresiva-controlada-350.webp"
-          />
-          <source
-            media="(max-width: 470px )"
-            srcset="imagens/exposiçao-agresiva-controlada-400.webp"
-          />
-          <source
-            media="(max-width:800px )"
-            srcset="imagens/exposiçao-agresiva-controlada-500.webp"
-          />
-          <img
-            src="imagens/exposiçao-agresiva-controlada-950.webp"
-            alt="Abastecimento controlado vs agressivo"
-          />
-        </picture>
-        <figcaption>
-          <sup
-            >Imagem: Esquerda exposição controlada, direita exposição agressiva.
-            Exposição Controlada e Exposição Agressiva no Setor de Hortifrúti:
-            Qual a melhor estratégia?</sup
+
+        <section class="space-y-4">
+          <h2
+            class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2"
           >
-        </figcaption>
-        <h2>Como Escolher a Melhor Estratégia?</h2>
-        <p>
-          Dessa forma, a escolha entre exposição controlada e agressiva
-          <strong>depende do perfil do seu público</strong>, do
-          <strong>local de venda</strong> e dos
-          <strong>seus objetivos comerciais</strong>.
-        </p>
-        <ul>
-          <li>
-            <strong>Hortifrútis premium</strong>: Devem priorizar a exposição
-            controlada para reforçar a percepção de qualidade.
-          </li>
-          <li>
-            <strong>Feiras livres e atacarejos e varejão</strong>: Beneficiam-se
-            da exposição agressiva, pois transmitem a ideia de preços <br />
-            baixos e diversidade.
-          </li>
-          <li>
-            <strong>Hortifrútis de bairro ou sacolão</strong>: Podem combinar
-            ambas as estratégias, apresentando produtos nobres <br />de forma
-            controlada e itens de alta rotatividade de maneira mais volumosa.
-          </li>
-        </ul>
-        <h2>Como Equilibrar as Duas Abordagens</h2>
-        <p>
-          Todavia, uma combinação inteligente
-          <strong>das duas técnicas</strong> pode maximizar os resultados.
-        </p>
-        <p>
-          <strong>Produtos delicados</strong>, como morangos e tomates, precisam
-          de uma <strong>exposição mais cuidadosa</strong> para evitar <br />
-          desperdício.
-        </p>
-        <p>
-          Já <strong>produtos mais resistentes</strong>, como batatas e cebolas,
-          podem aparecer em grandes quantidades para
-          <strong
-            >gerar <br />
-            impacto visual</strong
-          >.
-        </p>
-        <p>
-          Desse modo, a <strong>sinalização</strong> também ajuda a reforçar a
-          estratégia adotada.
-        </p>
-        <p>
-          Frases como “Seleção Especial” elevam a percepção de qualidade na
-          exposição controlada, enquanto <br />
-          “Promoção Imperdível” estimula compras em massa.
-        </p>
-        <p>
-          Assim, a estratégia de exposição pode ser adotada para diferentes dias
-          da semana, produtos, perfil de clientes <br />
-          e razão de ser da empresa
-        </p>
-        <p>
-          O importante é aplicando cada uma das estratégias para se adequar ao
-          modelo de negócio.
-        </p>
-        <h2>Conclusão</h2>
-        <p>
-          Por fim, a forma como você apresenta os produtos hortifrútis faz toda
-          a diferença no desempenho das <br />
-          vendas.
-        </p>
-        <p>
-          Tanto a exposição controlada quanto a agressiva oferecem vantagens e
-          desafios.
-        </p>
-        <p>
-          Para obter os melhores resultados, você deve considerar o perfil do
-          seu cliente e o posicionamento do seu <br />
-          negócio.
-        </p>
-        <p>
-          Ao combinar essas abordagens de maneira estratégica, você pode
-          <strong>criar um ambiente atraente e eficiente</strong>, <br />
-          impulsionando as vendas e garantindo uma melhor experiência para os
-          consumidores.
-        </p>
+            O Que é a Exposição Controlada?
+          </h2>
+
+          <p>
+            Primeiramente, na <strong>exposição controlada</strong>, os produtos
+            ficam dispostos <strong>de forma organizada e equilibrada</strong>,
+            sem excesso, dentro de um padrão.
+          </p>
+
+          <p>
+            Esse método
+            <strong>destaca a qualidade, o frescor e a sofisticação</strong> dos
+            itens, criando uma experiência de compra mais seletiva.
+          </p>
+
+          <h3 class="text-xl font-semibold text-green-700">
+            Benefícios da Exposição Controlada
+          </h3>
+          <ul class="list-disc list-inside space-y-2">
+            <li>
+              <strong>Aparência premium</strong>: Produtos bem posicionados
+              transmitem sofisticação e frescor.
+            </li>
+            <li>
+              <strong>Menos desperdício</strong>: Reduz danos e preserva a
+              durabilidade dos alimentos.
+            </li>
+            <li>
+              <strong>Melhor experiência do cliente</strong>: A disposição
+              ordenada facilita a escolha e aumenta a satisfação.
+            </li>
+            <li>
+              <strong>Maior controle de estoque</strong>: Renovação constante
+              evita perdas e melhora a gestão.
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2
+            class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2"
+          >
+            O Que é a Exposição Agressiva?
+          </h2>
+
+          <p>
+            Em contrapartida, na <strong>exposição agressiva</strong>, os
+            produtos aparecem em <strong>grandes volumes</strong>, criando uma
+            sensação de <strong>abundância e promoção</strong>.
+          </p>
+
+          <p>
+            Esse modelo atrai clientes que buscam
+            <strong>variedade e preços competitivos</strong>.
+          </p>
+
+          <h2
+            class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2"
+          >
+            Benefícios da Exposição Agressiva
+          </h2>
+          <ul class="list-disc list-inside space-y-2">
+            <li>
+              <strong>Sensação de fartura</strong>: Sugere variedade e preços
+              acessíveis.
+            </li>
+            <li>
+              <strong>Aumento das compras por impulso</strong>: Disposição
+              chamativa incentiva o consumo.
+            </li>
+            <li>
+              <strong>Facilidade na reposição</strong>: Reabastecimento simples
+              e rápido.
+            </li>
+            <li>
+              <strong>Melhor aproveitamento do espaço</strong>: Otimiza a área
+              de vendas.
+            </li>
+          </ul>
+
+          <p>
+            Além disso, um ambiente desorganizado pode prejudicar a experiência
+            de compra.
+          </p>
+
+          <div class="flex justify-center mb-4">
+            <img
+              src="imagens/exposiçao-agresiva-controlada-950.webp"
+              alt="Exposição controlada vs agressiva"
+              class="rounded-xl shadow-md max-w-full"
+            />
+          </div>
+          <figcaption class="text-center text-gray-500 text-sm">
+            Imagem: Esquerda - Exposição Controlada | Direita - Exposição
+            Agressiva
+          </figcaption>
+        </section>
+
+        <section class="space-y-4">
+          <h2
+            class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2"
+          >
+            Como Escolher a Melhor Estratégia?
+          </h2>
+
+          <p>
+            A escolha entre exposição controlada e agressiva depende do
+            <strong>perfil do público</strong>,
+            <strong>local de venda</strong> e
+            <strong>objetivos comerciais</strong>.
+          </p>
+
+          <ul class="list-disc list-inside space-y-2">
+            <li>
+              <strong>Hortifrútis premium</strong>: Priorizam exposição
+              controlada.
+            </li>
+            <li>
+              <strong>Feiras livres e atacarejos</strong>: Preferem exposição
+              agressiva.
+            </li>
+            <li>
+              <strong>Hortifrútis de bairro</strong>: Podem mesclar estratégias.
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h2
+            class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2"
+          >
+            Como Equilibrar as Duas Abordagens
+          </h2>
+
+          <p>
+            Uma combinação inteligente pode maximizar os resultados. Produtos
+            delicados precisam de exposição controlada, enquanto produtos
+            resistentes podem ser exibidos em grandes volumes.
+          </p>
+
+          <p>
+            Use também sinalizações inteligentes para reforçar a percepção de
+            qualidade ou promoção.
+          </p>
+        </section>
+
+        <section class="space-y-4">
+          <h2
+            class="text-2xl font-bold text-green-700 mt-10 border-b border-green-400 pb-2"
+          >
+            Conclusão
+          </h2>
+
+          <p>
+            A apresentação dos produtos faz toda a diferença no hortifrúti.
+            Saber equilibrar exposição controlada e agressiva impulsiona as
+            vendas e melhora a experiência de compra dos clientes.
+          </p>
+        </section>
       </article>
 
-      <a href="index.html"><img src="imagens/botao-voltar.png" alt="Botao de voltar" class="btn-voltar"></a>
+      <!-- Botão Voltar -->
+      <div class="flex justify-center mt-10">
+        <a href="index.html">
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all"
+          >
+            Voltar para o Início
+          </button>
+        </a>
+      </div>
     </main>
 
-    <footer>
-      Site Feito com 💙 por
-      <a href="https://github.com/mateusoliveiradev1" target="_blank" class="externo"
-        >Mateus Oliveira</a
-      >
+    <!-- Footer -->
+    <footer class="bg-green-600 mt-12 p-4">
+      <div class="text-center text-white text-sm">
+        © 2025 Todos os direitos reservados | Desenvolvido por
+        <a
+          href="https://github.com/mateusoliveiradev1"
+          target="_blank"
+          class="underline"
+          >Mateus</a
+        >
+      </div>
     </footer>
   </body>
 </html>
