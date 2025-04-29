@@ -19,9 +19,11 @@
   >
     <!-- Header -->
     <header
-      class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm"
+      class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm flex items-center"
     >
-      <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between w-full p-4"
+      >
         <a href="index.html">
           <img
             src="https://iquegami.com.br/wp-content/uploads/2021/02/logo-topo.png"
@@ -29,6 +31,40 @@
             class="h-10"
           />
         </a>
+
+        <!-- Botão Tema -->
+        <button
+          id="theme-toggle"
+          class="text-yellow-400 dark:text-gray-200 text-2xl animate-bounce mr-4"
+        >
+          ☀️
+        </button>
+
+        <!-- Botão Menu Mobile -->
+        <button
+          id="menu-toggle"
+          class="lg:hidden flex flex-col justify-between w-8 h-6"
+        >
+          <span class="block h-0.5 bg-gray-800 transition-all"></span>
+          <span class="block h-0.5 bg-gray-800 transition-all"></span>
+          <span class="block h-0.5 bg-gray-800 transition-all"></span>
+        </button>
+
+        <nav id="menu" class="hidden lg:flex gap-6 text-gray-700 font-medium">
+          <a href="index.html" class="hover:text-green-600 transition">Home</a>
+        </nav>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden flex-col items-center bg-white/90 backdrop-blur-md shadow-md absolute top-full left-0 w-full"
+      >
+        <a
+          href="index.html"
+          class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition"
+          >Home</a
+        >
       </div>
     </header>
 
@@ -305,5 +341,81 @@
         >
       </div>
     </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Menu Mobile
+      const toggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        toggle.classList.toggle("open");
+        const spans = toggle.querySelectorAll("span");
+        spans[0].classList.toggle("rotate-45");
+        spans[1].classList.toggle("opacity-0");
+        spans[2].classList.toggle("-rotate-45");
+      });
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          toggle.classList.remove("open");
+          const spans = toggle.querySelectorAll("span");
+          spans[0].classList.remove("rotate-45");
+          spans[1].classList.remove("opacity-0");
+          spans[2].classList.remove("-rotate-45");
+        });
+      });
+
+      // Tema Dark/Light
+      const themeToggle = document.getElementById("theme-toggle");
+      const root = document.documentElement;
+
+      function setTheme(theme) {
+        if (theme === "dark") {
+          root.classList.add("dark");
+          document.body.classList.remove(
+            "bg-gradient-to-b",
+            "from-green-100",
+            "to-green-50",
+            "text-gray-800"
+          );
+          document.body.classList.add(
+            "bg-gradient-to-b",
+            "from-gray-900",
+            "to-gray-800",
+            "text-white"
+          );
+          themeToggle.textContent = "🌙";
+        } else {
+          root.classList.remove("dark");
+          document.body.classList.remove(
+            "bg-gradient-to-b",
+            "from-gray-900",
+            "to-gray-800",
+            "text-white"
+          );
+          document.body.classList.add(
+            "bg-gradient-to-b",
+            "from-green-100",
+            "to-green-50",
+            "text-gray-800"
+          );
+          themeToggle.textContent = "☀️";
+        }
+      }
+
+      if (localStorage.getItem("theme") === "dark") {
+        setTheme("dark");
+      } else {
+        setTheme("light");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        const newTheme =
+          localStorage.getItem("theme") === "dark" ? "light" : "dark";
+        localStorage.setItem("theme", newTheme);
+        setTheme(newTheme);
+      });
+    </script>
   </body>
 </html>
