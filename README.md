@@ -40,6 +40,11 @@ Depois acesse `http://localhost:8000` no navegador.
 
 O arquivo `theme.js` centraliza a lógica de alternância de tema (claro/escuro)
 utilizada em todas as páginas HTML.
+
+
+O arquivo `menu.js` contém a lógica de abertura e fechamento do menu mobile,
+que agora também é compartilhada por todas as páginas.
+=
 O arquivo `menu.js` contém a lógica do menu mobile, também compartilhada entre
 as páginas.
 
@@ -56,6 +61,7 @@ que sirva arquivos HTML, como GitHub Pages ou um servidor HTTP simples.
 
 - `theme.js` gerencia a troca de tema claro/escuro e salva a preferência no `localStorage`.
 - `menu.js` concentra a lógica do menu mobile, evitando repetição de código nos arquivos HTML.
+
 
 
 
