@@ -1,6 +1,5 @@
 # PEPS
 
-
 Este repositório contém uma pequena aplicação web estática utilizada em treinamentos
 sobre as boas práticas de reposição de hortifrúti (PEPS - Primeiro que Entra,
 Primeiro que Sai). O projeto é composto por diversas páginas HTML estilizadas com
@@ -37,18 +36,6 @@ Depois acesse `http://localhost:8000` no navegador.
 
 ## Scripts
 
-
-O arquivo `theme.js` centraliza a lógica de alternância de tema (claro/escuro)
-utilizada em todas as páginas HTML.
-
-
-O arquivo `menu.js` contém a lógica de abertura e fechamento do menu mobile,
-que agora também é compartilhada por todas as páginas.
-=
-O arquivo `menu.js` contém a lógica do menu mobile, também compartilhada entre
-as páginas.
-
-
 - **theme.js**: centraliza a lógica de alternância do tema claro/escuro.
 - **menu.js** (após refatorar): arquivo planejado para reunir todo o código de
   abertura e fechamento do menu mobile, que hoje está duplicado dentro das
@@ -61,7 +48,3 @@ que sirva arquivos HTML, como GitHub Pages ou um servidor HTTP simples.
 
 - `theme.js` gerencia a troca de tema claro/escuro e salva a preferência no `localStorage`.
 - `menu.js` concentra a lógica do menu mobile, evitando repetição de código nos arquivos HTML.
-
-
-
-
