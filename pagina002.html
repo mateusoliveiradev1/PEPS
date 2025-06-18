@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
       content="Entenda as diferenças entre exposição controlada e agressiva de hortifrúti e escolha a melhor estratégia."
     />
+  <meta name="description" content="Explica as diferenças entre exposição controlada e agressiva no hortifrúti. Veja qual estratégia gera melhores resultados de vendas." />
+    <meta name="description" content="Aborda as estratégias de exposição de produtos no hortifrúti." />
     <title>Exposição Controlada e Exposição Agressiva no Hortifrúti</title>
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -298,32 +301,8 @@
         >
       </div>
     </footer>
-
     <!-- Scripts -->
-    <script>
-      // Menu Mobile
-      const toggle = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      toggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        toggle.classList.toggle("open");
-        const spans = toggle.querySelectorAll("span");
-        spans[0].classList.toggle("rotate-45");
-        spans[1].classList.toggle("opacity-0");
-        spans[2].classList.toggle("-rotate-45");
-      });
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-          toggle.classList.remove("open");
-          const spans = toggle.querySelectorAll("span");
-          spans[0].classList.remove("rotate-45");
-          spans[1].classList.remove("opacity-0");
-          spans[2].classList.remove("-rotate-45");
-        });
-      });
-
-      </script>
+    <script src="menu.js"></script>
     <script src="theme.js"></script>
     </body>
 </html>
