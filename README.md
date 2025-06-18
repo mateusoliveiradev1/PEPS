@@ -1,67 +1,21 @@
 # PEPS
 
-
-Este repositório contém uma pequena aplicação web estática utilizada em treinamentos
-sobre as boas práticas de reposição de hortifrúti (PEPS - Primeiro que Entra,
-Primeiro que Sai). O projeto é composto por diversas páginas HTML estilizadas com
-[Tailwind CSS](https://cdn.tailwindcss.com/) e imagens ilustrativas.
-
-## Como abrir as páginas
-
-Não há processo de build. Basta clonar o repositório e abrir o arquivo
-`index.html` em seu navegador preferido. Se desejar trabalhar com um servidor
-local, qualquer servidor estático simples (como a extensão Live Server do VS
-Code ou `python -m http.server`) funcionará.
-
-As demais páginas (`pagina002.html`, `pagina003.html`, `pagina004.html` e
-`treinamento.html`) podem ser acessadas por links contidos na página inicial.
-
-Site feito para mostrar os conceitos do PEPS.
-
+Este repositório contém uma pequena aplicação web utilizada em treinamentos sobre boas práticas de reposição de hortifrúti (PEPS - Primeiro que Entra, Primeiro que Sai). Agora o projeto roda em [Node.js](https://nodejs.org) com [Express](https://expressjs.com/) e usa [EJS](https://ejs.co/) para renderização das páginas.
 
 ## Como executar localmente
 
-Basta abrir o arquivo `index.html` em seu navegador ou iniciar um servidor estático na raiz do projeto. Um exemplo com Python:
-
 ```bash
-python3 -m http.server
+npm install
+npm start
 ```
 
-Depois acesse `http://localhost:8000` no navegador.
+O servidor ficará disponível em `http://localhost:3000`. Todas as rotas correspondem às antigas páginas HTML: `/`, `/pagina002`, `/pagina003`, `/pagina004` e `/treinamento`.
 
 ## Estrutura do projeto
 
-- **Style/** – contém o CSS utilizado nas páginas. O arquivo `style.css` define estilos base e regras de responsividade.
+- **src/** – contém o servidor Express, rotas e templates EJS.
 - **imagens/** – guarda todos os ativos de imagem usados pelo site.
-- **paginaXXX.html** – páginas de conteúdo adicionais. Para criar uma nova, duplique uma existente e ajuste os links do menu se necessário.
+- **Style/** – contém o CSS utilizado nas páginas.
+- **menu.js** e **theme.js** – scripts compartilhados para o menu e alternância de tema.
 
-## Scripts
-
-
-O arquivo `theme.js` centraliza a lógica de alternância de tema (claro/escuro)
-utilizada em todas as páginas HTML.
-
-
-O arquivo `menu.js` contém a lógica de abertura e fechamento do menu mobile,
-que agora também é compartilhada por todas as páginas.
-=
-O arquivo `menu.js` contém a lógica do menu mobile, também compartilhada entre
-as páginas.
-
-
-- **theme.js**: centraliza a lógica de alternância do tema claro/escuro.
-- **menu.js** (após refatorar): arquivo planejado para reunir todo o código de
-  abertura e fechamento do menu mobile, que hoje está duplicado dentro das
-  páginas HTML.
-
-## Implantação
-
-Por ser um site estático, a publicação pode ser feita em qualquer hospedagem
-que sirva arquivos HTML, como GitHub Pages ou um servidor HTTP simples.
-
-- `theme.js` gerencia a troca de tema claro/escuro e salva a preferência no `localStorage`.
-- `menu.js` concentra a lógica do menu mobile, evitando repetição de código nos arquivos HTML.
-
-
-
-
+A página de treinamento também consome dados disponibilizados em `/api/training`, exibindo o conteúdo de forma dinâmica.

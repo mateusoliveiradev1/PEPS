@@ -1,0 +1,17 @@
+{
+  "name": "repositores-do-futuro",
+  "version": "1.0.0",
+  "description": "Este repositório contém uma pequena aplicação web estática utilizada em treinamentos sobre as boas práticas de reposição de hortifrúti (PEPS - Primeiro que Entra, Primeiro que Sai). O projeto é composto por diversas páginas HTML estilizadas com [Tailwind CSS](https://cdn.tailwindcss.com/) e imagens ilustrativas.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

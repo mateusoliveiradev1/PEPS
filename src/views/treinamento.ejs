@@ -13,7 +13,7 @@
     <meta name="description" content="Sessão de treinamento para repositores do futuro." />
 
     <title>Treinamento - Repositores do Futuro</title>
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/static/imagens/favicon.ico" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
@@ -26,7 +26,7 @@
       <div
         class="max-w-7xl mx-auto flex items-center justify-between w-full p-4"
       >
-        <a href="index.html">
+        <a href="/">
           <img
             src="https://iquegami.com.br/wp-content/uploads/2021/02/logo-topo.png"
             alt="Logo"
@@ -54,7 +54,7 @@
 
         <!-- Menu Desktop -->
         <nav id="menu" class="hidden lg:flex gap-6 text-gray-700 font-medium">
-          <a href="index.html" class="hover:text-green-600 transition">Home</a>
+          <a href="/" class="hover:text-green-600 transition">Home</a>
         </nav>
       </div>
 
@@ -64,7 +64,7 @@
         class="hidden flex-col items-center bg-white/90 backdrop-blur-md shadow-md absolute top-full left-0 w-full"
       >
         <a
-          href="index.html"
+          href="/"
           class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition"
           >Home</a
         >
@@ -757,12 +757,14 @@
             <li>✅ Saber como conservar corretamente cada tipo de alimento.</li>
             <li>✅ Ser capaz de orientar clientes com segurança e clareza.</li>
           </ul>
+<section id="dynamicTraining" class="max-w-4xl mx-auto mt-8 space-y-4"></section>
+
         </div>
       </section>
 
       <!-- Botão Voltar -->
       <div class="flex justify-center mt-10">
-        <a href="index.html">
+        <a href="/">
           <button
             class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-all"
           >
@@ -785,7 +787,13 @@
       </div>
     </footer>
     <!-- Scripts -->
-    <script src="menu.js"></script>
-    <script src="theme.js"></script>
+    <script src="/static/menu.js"></script>
+    <script src="/static/theme.js"></script>
+  <script>
+    fetch("/api/training").then(r=>r.json()).then(d=>{
+      const c=document.getElementById("dynamicTraining");
+      c.innerHTML=d.map(i=>`<h3 class="text-xl font-bold">${i.title}</h3><p>${i.content}</p>`).join("");
+    });
+  </script>
     </body>
 </html>
