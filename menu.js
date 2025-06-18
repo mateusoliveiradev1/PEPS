@@ -1,3 +1,4 @@
+
 // Menu Mobile Logic
 const toggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -12,6 +13,8 @@ toggle.addEventListener('click', () => {
 });
 
 mobileMenu.querySelectorAll('a').forEach(link => {
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach((link) => {
   link.addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
     toggle.classList.remove('open');
