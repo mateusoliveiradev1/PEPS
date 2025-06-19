@@ -51,7 +51,7 @@ que sirva arquivos HTML, como GitHub Pages ou um servidor HTTP simples.
 
 ## Backend e Banco de Dados
 
-A pasta `backend/` contém uma API em Node.js que agora usa o [Supabase](https://supabase.com/) para armazenamento de dados. Crie um projeto no Supabase e defina as variáveis de ambiente `SUPABASE_URL` e `SUPABASE_KEY` antes de iniciar o servidor. Você pode criar um arquivo `.env` (baseado em `.env.example`) dentro da pasta `backend/` com esses valores:
+A pasta `backend/` contém uma API em Node.js que utiliza o [Supabase](https://supabase.com/) para armazenamento de dados. Toda a lógica anterior de SQLite foi removida (arquivos `db.js` e `initDB.js`), portanto todas as rotas agora usam exclusivamente o Supabase. Crie um projeto no Supabase e defina as variáveis de ambiente `SUPABASE_URL` e `SUPABASE_KEY` antes de iniciar o servidor. Você pode criar um arquivo `.env` (baseado em `.env.example`) dentro da pasta `backend/` com esses valores:
 
 ```bash
 cd backend
