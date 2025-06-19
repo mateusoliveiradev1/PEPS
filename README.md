@@ -62,6 +62,7 @@ npm start        # inicia o servidor em http://localhost:3000
 
 Os modelos disponíveis são **users**, **courses** e **xp_history**. Novas entradas podem ser adicionadas via requisições HTTP ou diretamente pelo SQLite.
 
+
 ### Exemplo de uso da API
 
 Algumas rotas disponíveis quando o servidor está rodando em `http://localhost:3000`:
@@ -91,3 +92,17 @@ curl -X POST http://localhost:3000/xp-history \
 # histórico de XP do usuário
 curl http://localhost:3000/xp-history/user/1
 ```
+
+## Servidor Flask
+
+O arquivo `app.py` disponibiliza um pequeno servidor em Flask para fins de
+autenticação. Defina a variável de ambiente `SECRET_KEY` antes de executá-lo, a
+fim de configurar a chave de sessão utilizada pela aplicação:
+
+```bash
+export SECRET_KEY=minha-chave-secreta
+python app.py
+```
+
+Caso a variável não seja definida, um valor padrão será utilizado.
+
