@@ -1,0 +1,10 @@
+# Ignore editor swap files
+*~
+*.sw?
+.*.sw?
+# Ignore OS metadata files
+.DS_Store
+Thumbs.db
+# Ignore other temporary files
+*.tmp
+*.log
