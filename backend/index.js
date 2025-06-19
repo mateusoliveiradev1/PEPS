@@ -1,10 +1,7 @@
 const express = require('express');
-const { init } = require('./db');
 const users = require('./models/userModel');
 const courses = require('./models/courseModel');
 const xpHistory = require('./models/xpHistoryModel');
-
-init();
 
 const app = express();
 app.use(express.json());

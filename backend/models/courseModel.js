@@ -1,31 +1,63 @@
-const { db } = require('../db');
+const { supabase } = require('../supabaseClient');
 
-function createCourse(title, description, cb) {
-  const stmt = db.prepare('INSERT INTO courses (title, description) VALUES (?, ?)');
-  stmt.run(title, description, function(err) {
-    cb(err, this ? this.lastID : null);
-  });
-  stmt.finalize();
+async function createCourse(title, description, cb) {
+  try {
+    const { data, error } = await supabase
+      .from('courses')
+      .insert({ title, description })
+      .select()
+      .single();
+    if (error) return cb(error, null);
+    cb(null, data.id);
+  } catch (err) {
+    cb(err, null);
+  }
 }
 
-function getCourseById(id, cb) {
-  db.get('SELECT * FROM courses WHERE id = ?', [id], cb);
+async function getCourseById(id, cb) {
+  try {
+    const { data, error } = await supabase
+      .from('courses')
+      .select('*')
+      .eq('id', id)
+      .single();
+    if (error) return cb(error, null);
+    cb(null, data);
+  } catch (err) {
+    cb(err, null);
+  }
 }
 
-function listCourses(cb) {
-  db.all('SELECT * FROM courses', cb);
+async function listCourses(cb) {
+  try {
+    const { data, error } = await supabase.from('courses').select('*');
+    if (error) return cb(error, null);
+    cb(null, data);
+  } catch (err) {
+    cb(err, null);
+  }
 }
 
-function updateCourse(id, title, description, cb) {
-  const stmt = db.prepare('UPDATE courses SET title = ?, description = ? WHERE id = ?');
-  stmt.run(title, description, id, cb);
-  stmt.finalize();
+async function updateCourse(id, title, description, cb) {
+  try {
+    const { error } = await supabase
+      .from('courses')
+      .update({ title, description })
+      .eq('id', id);
+    if (error) return cb(error);
+    cb(null);
+  } catch (err) {
+    cb(err);
+  }
 }
 
-function deleteCourse(id, cb) {
-  const stmt = db.prepare('DELETE FROM courses WHERE id = ?');
-  stmt.run(id, cb);
-  stmt.finalize();
+async function deleteCourse(id, cb) {
+  try {
+    const { error } = await supabase.from('courses').delete().eq('id', id);
+    cb(error || null);
+  } catch (err) {
+    cb(err);
+  }
 }
 
 module.exports = {

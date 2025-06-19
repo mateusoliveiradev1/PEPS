@@ -1,31 +1,70 @@
-const { db } = require('../db');
+const { supabase } = require('../supabaseClient');
 
-function addXP(userId, courseId, xp, cb) {
-  const stmt = db.prepare('INSERT INTO xp_history (user_id, course_id, xp) VALUES (?, ?, ?)');
-  stmt.run(userId, courseId, xp, function(err) {
-    cb(err, this ? this.lastID : null);
-  });
-  stmt.finalize();
+async function addXP(userId, courseId, xp, cb) {
+  try {
+    const { data, error } = await supabase
+      .from('xp_history')
+      .insert({ user_id: userId, course_id: courseId, xp })
+      .select()
+      .single();
+    if (error) return cb(error, null);
+    cb(null, data.id);
+  } catch (err) {
+    cb(err, null);
+  }
 }
 
-function getHistoryByUser(userId, cb) {
-  db.all('SELECT * FROM xp_history WHERE user_id = ? ORDER BY ts DESC', [userId], cb);
+async function getHistoryByUser(userId, cb) {
+  try {
+    const { data, error } = await supabase
+      .from('xp_history')
+      .select('*')
+      .eq('user_id', userId)
+      .order('ts', { ascending: false });
+    if (error) return cb(error, null);
+    cb(null, data);
+  } catch (err) {
+    cb(err, null);
+  }
 }
 
-function getEntryById(id, cb) {
-  db.get('SELECT * FROM xp_history WHERE id = ?', [id], cb);
+async function getEntryById(id, cb) {
+  try {
+    const { data, error } = await supabase
+      .from('xp_history')
+      .select('*')
+      .eq('id', id)
+      .single();
+    if (error) return cb(error, null);
+    cb(null, data);
+  } catch (err) {
+    cb(err, null);
+  }
 }
 
-function updateEntry(id, userId, courseId, xp, cb) {
-  const stmt = db.prepare('UPDATE xp_history SET user_id = ?, course_id = ?, xp = ? WHERE id = ?');
-  stmt.run(userId, courseId, xp, id, cb);
-  stmt.finalize();
+async function updateEntry(id, userId, courseId, xp, cb) {
+  try {
+    const { error } = await supabase
+      .from('xp_history')
+      .update({ user_id: userId, course_id: courseId, xp })
+      .eq('id', id);
+    if (error) return cb(error);
+    cb(null);
+  } catch (err) {
+    cb(err);
+  }
 }
 
-function deleteEntry(id, cb) {
-  const stmt = db.prepare('DELETE FROM xp_history WHERE id = ?');
-  stmt.run(id, cb);
-  stmt.finalize();
+async function deleteEntry(id, cb) {
+  try {
+    const { error } = await supabase
+      .from('xp_history')
+      .delete()
+      .eq('id', id);
+    cb(error || null);
+  } catch (err) {
+    cb(err);
+  }
 }
 
 module.exports = {

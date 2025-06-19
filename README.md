@@ -51,16 +51,17 @@ que sirva arquivos HTML, como GitHub Pages ou um servidor HTTP simples.
 
 ## Backend e Banco de Dados
 
-A pasta `backend/` traz um exemplo simples de API em Node.js utilizando SQLite. Para criar o banco e iniciar o servidor:
+A pasta `backend/` contém uma API em Node.js que agora usa o [Supabase](https://supabase.com/) para armazenamento de dados. Crie um projeto no Supabase e defina as variáveis de ambiente `SUPABASE_URL` e `SUPABASE_KEY` antes de iniciar o servidor:
 
 ```bash
 cd backend
 npm install
-npm run initdb   # cria o arquivo `database.sqlite`
+export SUPABASE_URL=https://<sua-instancia>.supabase.co
+export SUPABASE_KEY=<chave-api>
 npm start        # inicia o servidor em http://localhost:3000
 ```
 
-Os modelos disponíveis são **users**, **courses** e **xp_history**. Novas entradas podem ser adicionadas via requisições HTTP ou diretamente pelo SQLite.
+Os modelos disponíveis são **users**, **courses** e **xp_history**. As operações CRUD são executadas nas tabelas do projeto Supabase.
 
 
 ## Testes
