@@ -48,3 +48,16 @@ que sirva arquivos HTML, como GitHub Pages ou um servidor HTTP simples.
 
 - `theme.js` gerencia a troca de tema claro/escuro e salva a preferência no `localStorage`.
 - `menu.js` concentra a lógica do menu mobile, evitando repetição de código nos arquivos HTML.
+
+## Backend e Banco de Dados
+
+A pasta `backend/` traz um exemplo simples de API em Node.js utilizando SQLite. Para criar o banco e iniciar o servidor:
+
+```bash
+cd backend
+npm install
+npm run initdb   # cria o arquivo `database.sqlite`
+npm start        # inicia o servidor em http://localhost:3000
+```
+
+Os modelos disponíveis são **users**, **courses** e **xp_history**. Novas entradas podem ser adicionadas via requisições HTTP ou diretamente pelo SQLite.

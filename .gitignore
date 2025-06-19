@@ -8,3 +8,7 @@ Thumbs.db
 # Ignore other temporary files
 *.tmp
 *.log
+
+# Backend dependencies
+backend/node_modules/
+backend/database.sqlite
