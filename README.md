@@ -61,3 +61,16 @@ npm start        # inicia o servidor em http://localhost:3000
 ```
 
 Os modelos disponíveis são **users**, **courses** e **xp_history**. Novas entradas podem ser adicionadas via requisições HTTP ou diretamente pelo SQLite.
+
+## Servidor Flask
+
+O arquivo `app.py` disponibiliza um pequeno servidor em Flask para fins de
+autenticação. Defina a variável de ambiente `SECRET_KEY` antes de executá-lo, a
+fim de configurar a chave de sessão utilizada pela aplicação:
+
+```bash
+export SECRET_KEY=minha-chave-secreta
+python app.py
+```
+
+Caso a variável não seja definida, um valor padrão será utilizado.

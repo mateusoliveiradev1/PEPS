@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 USERS_FILE = os.path.join(BASE_DIR, 'users.json')
 
 app = Flask(__name__, static_folder=None)
-app.secret_key = 'change-this-secret'
+app.secret_key = os.environ.get('SECRET_KEY', 'change-this-secret')
 
 
 def load_users():
