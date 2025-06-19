@@ -9,6 +9,9 @@ Thumbs.db
 *.tmp
 *.log
 
+users.json
+
+
 
 # Backend dependencies
 backend/node_modules/
@@ -17,4 +20,5 @@ backend/database.sqlite
 # Node dependencies
 node_modules
 package-lock.json
+
 
