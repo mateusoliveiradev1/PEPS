@@ -41,6 +41,11 @@ app.get('/register', (req, res) => {
   res.render('register');
 });
 
+// rota adicional para compatibilidade com links antigos
+app.get('/signup', (req, res) => {
+  res.render('register');
+});
+
 app.get('/login', (req, res) => {
   res.render('login');
 });
