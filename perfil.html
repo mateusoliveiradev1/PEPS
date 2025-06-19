@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil do Usuário</title>
+  <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="transition-all duration-500 bg-gradient-to-b from-green-100 to-green-50 text-gray-800 font-sans">
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm flex items-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-between w-full p-4">
+      <a href="index.html">
+        <img src="https://iquegami.com.br/wp-content/uploads/2021/02/logo-topo.png" alt="Logo" class="h-10" />
+      </a>
+      <button id="theme-toggle" class="text-yellow-400 dark:text-gray-200 text-2xl animate-bounce mr-4">☀️</button>
+      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden flex flex-col justify-between w-8 h-6">
+        <span class="block h-0.5 bg-gray-800 transition-all"></span>
+        <span class="block h-0.5 bg-gray-800 transition-all"></span>
+        <span class="block h-0.5 bg-gray-800 transition-all"></span>
+      </button>
+      <nav id="menu" class="hidden lg:flex gap-6 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-green-600 transition">Home</a>
+        <a href="treinamento.html" class="hover:text-green-600 transition">Treinamento</a>
+        <a href="perfil.html" class="hover:text-green-600 transition">Perfil</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="hidden flex-col items-center bg-white/90 backdrop-blur-md shadow-md absolute top-full left-0 w-full">
+      <a href="index.html" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Home</a>
+      <a href="treinamento.html" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Treinamento</a>
+      <a href="perfil.html" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Perfil</a>
+    </div>
+  </header>
+  <div class="h-24"></div>
+  <main class="max-w-3xl mx-auto p-4 space-y-6">
+    <h1 class="text-4xl font-bold text-center text-green-800 mb-8">Meu Perfil</h1>
+    <div class="bg-white/70 dark:bg-green-900/80 backdrop-blur-sm p-6 rounded-xl shadow-md">
+      <p id="xp" class="text-lg mb-4">XP: 0</p>
+      <p id="level" class="text-lg mb-4">Nível: 1</p>
+      <div class="w-full bg-gray-200 rounded-full h-4">
+        <div id="xp-bar" class="bg-green-600 h-4 rounded-full" style="width: 0%"></div>
+      </div>
+    </div>
+    <section>
+      <h2 class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2 mb-4">Aulas Concluídas</h2>
+      <ul id="completed-list" class="list-disc list-inside space-y-1"></ul>
+    </section>
+  </main>
+  <script src="menu.js"></script>
+  <script src="theme.js"></script>
+  <script src="xp.js"></script>
+  <script>
+    function renderProfile() {
+      const progress = getProgress();
+      const level = currentLevel(progress.xp);
+      const next = nextLevelXP(progress.xp);
+      document.getElementById('xp').textContent = `XP: ${progress.xp}`;
+      document.getElementById('level').textContent = `Nível: ${level}`;
+      const pct = Math.min((progress.xp / next) * 100, 100);
+      document.getElementById('xp-bar').style.width = pct + '%';
+      const list = document.getElementById('completed-list');
+      list.innerHTML = '';
+      progress.completed.forEach(id => {
+        const li = document.createElement('li');
+        li.textContent = id;
+        list.appendChild(li);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', renderProfile);
+  </script>
+</body>
+</html>
