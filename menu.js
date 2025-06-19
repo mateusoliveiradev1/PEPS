@@ -6,6 +6,7 @@ if (toggle && mobileMenu) {
   toggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     toggle.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
     const spans = toggle.querySelectorAll('span');
     spans[0].classList.toggle('rotate-45');
     spans[1].classList.toggle('opacity-0');
@@ -16,6 +17,7 @@ if (toggle && mobileMenu) {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
       toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
       const spans = toggle.querySelectorAll('span');
       spans[0].classList.remove('rotate-45');
       spans[1].classList.remove('opacity-0');
