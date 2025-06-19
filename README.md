@@ -63,6 +63,16 @@ npm start        # inicia o servidor em http://localhost:3000
 Os modelos disponíveis são **users**, **courses** e **xp_history**. Novas entradas podem ser adicionadas via requisições HTTP ou diretamente pelo SQLite.
 
 
+## Testes
+
+Para rodar a suíte de testes Python, instale as dependências e execute o `pytest` na raiz do projeto:
+
+```bash
+pip install -r requirements.txt
+pytest
+```
+
+
 Este backend é opcional e não é utilizado diretamente pelas páginas HTML atuais. Suas rotas HTTP podem ser chamadas via JavaScript para adicionar funcionalidades dinâmicas, mas o frontend continua funcionando apenas com arquivos estáticos.
 
 ## Aplicação Flask
@@ -118,5 +128,6 @@ python app.py
 ```
 
 Caso a variável não seja definida, um valor padrão será utilizado.
+
 
 
