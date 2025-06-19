@@ -16,6 +16,10 @@ def test_home_page(client):
     assert response.status_code == 200
     assert b'Repositor de Hortifr' in response.data
 
+def test_pagina_modulo1_page(client):
+    response = client.get('/pagina_modulo1.html')
+    assert response.status_code == 200
+
 def test_treinamento_requires_login(client):
     response = client.get('/treinamento.html', follow_redirects=False)
     assert response.status_code in (301, 302)
