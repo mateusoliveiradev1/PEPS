@@ -2,21 +2,21 @@
   {
     "titulo": "Introdu\u00e7\u00e3o ao Hortifr\u00fati",
     "descricao": "Conceitos b\u00e1sicos e panorama do setor.",
-    "link": "https://example.com/video1"
+    "link": "index.html"
   },
   {
     "titulo": "T\u00e9cnicas de Reposi\u00e7\u00e3o",
     "descricao": "Saiba como repor produtos com seguran\u00e7a e efici\u00eancia.",
-    "link": "https://example.com/video2"
+    "link": "pagina002.html"
   },
   {
     "titulo": "Armazenamento e Conserva\u00e7\u00e3o",
     "descricao": "M\u00e9todos corretos para conservar frutas e legumes.",
-    "link": "https://example.com/video3"
+    "link": "pagina003.html"
   },
   {
     "titulo": "Atendimento ao Cliente",
     "descricao": "Dicas para um atendimento cordial no hortif\u00fati.",
-    "link": "https://example.com/video4"
+    "link": "index.html#5"
   }
 ]
