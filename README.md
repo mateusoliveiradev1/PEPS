@@ -7,26 +7,39 @@ Primeiro que Sai). O projeto é composto por diversas páginas HTML estilizadas 
 
 ## Como abrir as páginas
 
-Não há processo de build. Basta clonar o repositório e abrir o arquivo
-`index.html` em seu navegador preferido. Se desejar trabalhar com um servidor
-local, qualquer servidor estático simples (como a extensão Live Server do VS
-Code ou `python -m http.server`) funcionará.
+Não há processo de build. Clone o repositório e execute um dos servidores que
+acompanham o projeto para visualizar o site.
 
-As demais páginas (`pagina002.html`, `pagina003.html`, `pagina004.html` e
-`treinamento.html`) podem ser acessadas por links contidos na página inicial.
+Para iniciar o servidor Flask rode:
+
+```bash
+python app.py
+```
+
+Caso prefira a aplicação em Node, dentro da pasta `backend/` use:
+
+```bash
+npm start
+```
+
+Os arquivos HTML são servidos a partir dos diretórios `templates/` (Flask) e
+`views/` (Express). As páginas adicionais (`pagina002.html`, `pagina003.html`,
+`pagina004.html` e `treinamento.html`) podem ser acessadas pelas rotas
+correspondentes.
 
 Site feito para mostrar os conceitos do PEPS.
 
 
 ## Como executar localmente
 
-Basta abrir o arquivo `index.html` em seu navegador ou iniciar um servidor estático na raiz do projeto. Um exemplo com Python:
+Escolha entre iniciar o servidor Flask ou o Express para rodar o site:
 
 ```bash
-python3 -m http.server
+python app.py        # http://localhost:5000
+# ou
+cd backend
+npm start            # http://localhost:3000
 ```
-
-Depois acesse `http://localhost:8000` no navegador.
 
 ## Estrutura do projeto
 
