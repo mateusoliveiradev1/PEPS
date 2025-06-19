@@ -61,3 +61,12 @@ npm start        # inicia o servidor em http://localhost:3000
 ```
 
 Os modelos disponíveis são **users**, **courses** e **xp_history**. Novas entradas podem ser adicionadas via requisições HTTP ou diretamente pelo SQLite.
+
+## Testes
+
+Para rodar a suíte de testes Python, instale as dependências e execute o `pytest` na raiz do projeto:
+
+```bash
+pip install -r requirements.txt
+pytest
+```
