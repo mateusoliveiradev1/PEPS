@@ -34,7 +34,7 @@ def login_required(f):
 
 @app.route('/')
 def home():
-    return send_from_directory(BASE_DIR, 'index.html')
+    return render_template('index.html', user=session.get('user'))
 
 
 @app.route('/signup', methods=['GET', 'POST'])
