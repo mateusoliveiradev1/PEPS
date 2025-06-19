@@ -14,6 +14,11 @@ async function carregarTreinamentos() {
         <h2 class="text-2xl font-bold text-green-700 border-b border-green-400 pb-2 mb-4">${mod.titulo}</h2>
         <p class="mb-4">${mod.descricao}</p>
         <a href="${mod.link}" target="_blank" class="text-green-700 underline">Acessar material</a>
+        <div class="mt-4">
+          <button onclick="completeLesson('${mod.titulo}', 50)" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-full shadow-md transition-all">
+            Concluir Módulo
+          </button>
+        </div>
       `;
       container.appendChild(bloco);
     });
