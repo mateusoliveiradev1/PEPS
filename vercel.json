@@ -3,6 +3,23 @@
   "builds": [
     { "src": "api/index.js", "use": "@vercel/node" }
   ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": [
+        "views/**",
+        "Style/**",
+        "imagens/**",
+        "*.html",
+        "components.js",
+        "menu.js",
+        "quiz_modulo1.js",
+        "treinamento.js",
+        "theme.js",
+        "xp.js",
+        "data/**"
+      ]
+    }
+  },
   "routes": [
     { "src": "/(.*)", "dest": "api/index.js" }
   ]
