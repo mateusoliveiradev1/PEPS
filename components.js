@@ -12,23 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="block h-0.5 bg-gray-800 transition-all"></span>
         </button>
         <nav id="menu" class="hidden lg:flex gap-6 text-gray-700 font-medium">
-          <a href="index.html#1" class="hover:text-green-600 transition">Técnica PEPS</a>
-          <a href="index.html#2" class="hover:text-green-600 transition">Conhecer Os Produtos</a>
-          <a href="index.html#3" class="hover:text-green-600 transition">Conceito 3P 1L</a>
-          <a href="index.html#4" class="hover:text-green-600 transition">Noções de Venda</a>
-          <a href="index.html#5" class="hover:text-green-600 transition">Atendimento</a>
-          <a href="treinamento.html" class="hover:text-green-600 transition">Treinamento</a>
+          <a href="index.html" class="hover:text-green-600 transition">Home</a>
           <a href="pagina_modulo1.html" class="hover:text-green-600 transition">Módulo 1</a>
+          <a href="treinamento.html" class="hover:text-green-600 transition">Treinamento</a>
         </nav>
       </div>
       <div id="mobile-menu" class="hidden flex-col items-center bg-white/90 backdrop-blur-md shadow-md absolute top-full left-0 w-full">
-        <a href="index.html#1" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">PEPS</a>
-        <a href="index.html#2" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Produtos</a>
-        <a href="index.html#3" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Conceito 3P 1L</a>
-        <a href="index.html#4" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Noções de Venda</a>
-          <a href="index.html#5" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Atendimento</a>
-          <a href="treinamento.html" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Treinamento</a>
-          <a href="pagina_modulo1.html" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Módulo 1</a>
+        <a href="index.html" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Home</a>
+        <a href="pagina_modulo1.html" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Módulo 1</a>
+        <a href="treinamento.html" class="py-3 w-full text-center text-gray-700 hover:text-green-600 transition">Treinamento</a>
         </div>
     </header>
     <div class="h-24"></div>
