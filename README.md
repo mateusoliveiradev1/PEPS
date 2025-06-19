@@ -62,6 +62,7 @@ npm start        # inicia o servidor em http://localhost:3000
 
 Os modelos disponíveis são **users**, **courses** e **xp_history**. Novas entradas podem ser adicionadas via requisições HTTP ou diretamente pelo SQLite.
 
+
 ## Testes
 
 Para rodar a suíte de testes Python, instale as dependências e execute o `pytest` na raiz do projeto:
@@ -70,3 +71,63 @@ Para rodar a suíte de testes Python, instale as dependências e execute o `pyte
 pip install -r requirements.txt
 pytest
 ```
+
+
+Este backend é opcional e não é utilizado diretamente pelas páginas HTML atuais. Suas rotas HTTP podem ser chamadas via JavaScript para adicionar funcionalidades dinâmicas, mas o frontend continua funcionando apenas com arquivos estáticos.
+
+## Aplicação Flask
+
+O arquivo `app.py` implementa um servidor em Flask que também pode servir as páginas e oferecer um fluxo simples de login. Para executá-lo, certifique-se de ter o Flask instalado e rode:
+
+```bash
+python app.py
+```
+
+O app iniciará em `http://localhost:5000` permitindo acessar `/login` e `/signup`. Ele funciona como um exemplo de backend em Python, protegendo a página `treinamento.html`, mas não é obrigatório para visualizar o conteúdo estático do site.
+
+
+### Exemplo de uso da API
+
+Algumas rotas disponíveis quando o servidor está rodando em `http://localhost:3000`:
+
+```bash
+# listar cursos
+curl http://localhost:3000/courses
+
+# criar um curso
+curl -X POST http://localhost:3000/courses \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Curso de PEPS", "description": "Introdução ao método"}'
+
+# atualizar um curso
+curl -X PUT http://localhost:3000/courses/1 \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Curso atualizado", "description": "Descrição"}'
+
+# remover um curso
+curl -X DELETE http://localhost:3000/courses/1
+
+# adicionar XP para um usuário
+curl -X POST http://localhost:3000/xp-history \
+  -H "Content-Type: application/json" \
+  -d '{"user_id": 1, "course_id": 1, "xp": 50}'
+
+# histórico de XP do usuário
+curl http://localhost:3000/xp-history/user/1
+```
+
+## Servidor Flask
+
+O arquivo `app.py` disponibiliza um pequeno servidor em Flask para fins de
+autenticação. Defina a variável de ambiente `SECRET_KEY` antes de executá-lo, a
+fim de configurar a chave de sessão utilizada pela aplicação:
+
+```bash
+export SECRET_KEY=minha-chave-secreta
+python app.py
+```
+
+Caso a variável não seja definida, um valor padrão será utilizado.
+
+
+
