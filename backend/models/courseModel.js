@@ -16,8 +16,22 @@ function listCourses(cb) {
   db.all('SELECT * FROM courses', cb);
 }
 
+function updateCourse(id, title, description, cb) {
+  const stmt = db.prepare('UPDATE courses SET title = ?, description = ? WHERE id = ?');
+  stmt.run(title, description, id, cb);
+  stmt.finalize();
+}
+
+function deleteCourse(id, cb) {
+  const stmt = db.prepare('DELETE FROM courses WHERE id = ?');
+  stmt.run(id, cb);
+  stmt.finalize();
+}
+
 module.exports = {
   createCourse,
   getCourseById,
-  listCourses
+  listCourses,
+  updateCourse,
+  deleteCourse
 };

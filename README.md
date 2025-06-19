@@ -61,3 +61,33 @@ npm start        # inicia o servidor em http://localhost:3000
 ```
 
 Os modelos disponíveis são **users**, **courses** e **xp_history**. Novas entradas podem ser adicionadas via requisições HTTP ou diretamente pelo SQLite.
+
+### Exemplo de uso da API
+
+Algumas rotas disponíveis quando o servidor está rodando em `http://localhost:3000`:
+
+```bash
+# listar cursos
+curl http://localhost:3000/courses
+
+# criar um curso
+curl -X POST http://localhost:3000/courses \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Curso de PEPS", "description": "Introdução ao método"}'
+
+# atualizar um curso
+curl -X PUT http://localhost:3000/courses/1 \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Curso atualizado", "description": "Descrição"}'
+
+# remover um curso
+curl -X DELETE http://localhost:3000/courses/1
+
+# adicionar XP para um usuário
+curl -X POST http://localhost:3000/xp-history \
+  -H "Content-Type: application/json" \
+  -d '{"user_id": 1, "course_id": 1, "xp": 50}'
+
+# histórico de XP do usuário
+curl http://localhost:3000/xp-history/user/1
+```
