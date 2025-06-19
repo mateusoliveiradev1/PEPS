@@ -16,6 +16,8 @@ users.json
 # Backend dependencies
 backend/node_modules/
 backend/database.sqlite
+backend/.env
+.env
 
 # Node dependencies
 node_modules

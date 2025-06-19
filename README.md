@@ -51,14 +51,21 @@ que sirva arquivos HTML, como GitHub Pages ou um servidor HTTP simples.
 
 ## Backend e Banco de Dados
 
-A pasta `backend/` contém uma API em Node.js que agora usa o [Supabase](https://supabase.com/) para armazenamento de dados. Crie um projeto no Supabase e defina as variáveis de ambiente `SUPABASE_URL` e `SUPABASE_KEY` antes de iniciar o servidor:
+A pasta `backend/` contém uma API em Node.js que agora usa o [Supabase](https://supabase.com/) para armazenamento de dados. Crie um projeto no Supabase e defina as variáveis de ambiente `SUPABASE_URL` e `SUPABASE_KEY` antes de iniciar o servidor. Você pode criar um arquivo `.env` (baseado em `.env.example`) dentro da pasta `backend/` com esses valores:
 
 ```bash
 cd backend
 npm install
-export SUPABASE_URL=https://<sua-instancia>.supabase.co
-export SUPABASE_KEY=<chave-api>
+# copie .env.example para .env e edite com suas credenciais
+cp .env.example .env
 npm start        # inicia o servidor em http://localhost:3000
+```
+
+Exemplo de `.env`:
+
+```bash
+SUPABASE_URL=https://hovuxwfziehqsbclyvoh.supabase.co
+SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvdnV4d2Z6aWVocXNiY2x5dm9oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzMDMwMzcsImV4cCI6MjA2NTg3OTAzN30.B9H06zOdiVGcE1W72HoPnu92fojlcOXOnkvHeviq0Fw
 ```
 
 Os modelos disponíveis são **users**, **courses** e **xp_history**. As operações CRUD são executadas nas tabelas do projeto Supabase.

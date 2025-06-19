@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
-    "@supabase/supabase-js": "^2.50.0"
+    "@supabase/supabase-js": "^2.50.0",
+    "dotenv": "^16.4.5"
   }
 }
