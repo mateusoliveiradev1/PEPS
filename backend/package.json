@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "initdb": "node initDB.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +12,6 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
-    "sqlite3": "^5.1.7"
+    "@supabase/supabase-js": "^2.50.0"
   }
 }
