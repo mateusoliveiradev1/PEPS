@@ -16,10 +16,15 @@ function setTheme(theme) {
   }
 }
 
-if (localStorage.getItem('theme') === 'dark') {
-  setTheme('dark');
+const storedTheme = localStorage.getItem('theme');
+
+if (storedTheme === 'dark' || storedTheme === 'light') {
+  setTheme(storedTheme);
 } else {
-  setTheme('light');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = prefersDark ? 'dark' : 'light';
+  localStorage.setItem('theme', initialTheme);
+  setTheme(initialTheme);
 }
 
 themeToggle.addEventListener('click', () => {
