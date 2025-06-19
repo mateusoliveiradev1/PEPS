@@ -8,3 +8,4 @@ Thumbs.db
 # Ignore other temporary files
 *.tmp
 *.log
+users.json
