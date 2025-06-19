@@ -17,7 +17,6 @@ As demais páginas (`pagina002.html`, `pagina003.html`, `pagina004.html` e
 
 Site feito para mostrar os conceitos do PEPS.
 
-
 ## Como executar localmente
 
 Basta abrir o arquivo `index.html` em seu navegador ou iniciar um servidor estático na raiz do projeto. Um exemplo com Python:
@@ -70,7 +69,6 @@ SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZi
 
 Os modelos disponíveis são **users**, **courses** e **xp_history**. As operações CRUD são executadas nas tabelas do projeto Supabase.
 
-
 ## Testes
 
 Para rodar a suíte de testes Python, instale as dependências e execute o `pytest` na raiz do projeto:
@@ -79,7 +77,6 @@ Para rodar a suíte de testes Python, instale as dependências e execute o `pyte
 pip install -r requirements.txt
 pytest
 ```
-
 
 Este backend é opcional e não é utilizado diretamente pelas páginas HTML atuais. Suas rotas HTTP podem ser chamadas via JavaScript para adicionar funcionalidades dinâmicas, mas o frontend continua funcionando apenas com arquivos estáticos.
 
@@ -92,7 +89,6 @@ python app.py
 ```
 
 O app iniciará em `http://localhost:5000` permitindo acessar `/login` e `/signup`. Ele funciona como um exemplo de backend em Python, protegendo a página `treinamento.html`, mas não é obrigatório para visualizar o conteúdo estático do site.
-
 
 ### Exemplo de uso da API
 
@@ -136,6 +132,3 @@ python app.py
 ```
 
 Caso a variável não seja definida, um valor padrão será utilizado.
-
-
-
