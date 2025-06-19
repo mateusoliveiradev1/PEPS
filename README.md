@@ -61,6 +61,34 @@ que sirva arquivos HTML, como GitHub Pages ou um servidor HTTP simples.
 - `theme.js` gerencia a troca de tema claro/escuro e salva a preferência no `localStorage`.
 - `menu.js` concentra a lógica do menu mobile, evitando repetição de código nos arquivos HTML.
 
+### Implantação no Vercel
+
+Caso prefira usar o [Vercel](https://vercel.com/) para hospedar a versão Node
+desse projeto, primeiro instale a CLI globalmente:
+
+```bash
+npm install -g vercel
+```
+
+Em seguida, autentique-se e vincule o repositório a um projeto existente (ou
+crie um novo) executando:
+
+```bash
+vercel login
+vercel link
+```
+
+Após configurado, basta publicar com:
+
+```bash
+vercel --prod
+```
+
+Se a CLI mostrar o erro `404: NOT_FOUND`, verifique se o projeto escolhido
+existe na sua conta ou use `vercel link` novamente para selecionar o nome
+correto. Em caso de problemas adicionais, rode `vercel --debug` ou consulte os
+logs via `vercel logs <URL-do-deploy>`.
+
 ## Backend e Banco de Dados
 
 A pasta `backend/` contém uma API em Node.js que utiliza o [Supabase](https://supabase.com/) para armazenamento de dados. Toda a lógica anterior de SQLite foi removida (arquivos `db.js` e `initDB.js`), portanto todas as rotas agora usam exclusivamente o Supabase. Crie um projeto no Supabase e defina as variáveis de ambiente `SUPABASE_URL` e `SUPABASE_KEY` antes de iniciar o servidor. Você pode criar um arquivo `.env` (baseado em `.env.example`) dentro da pasta `backend/` com esses valores:
